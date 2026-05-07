@@ -10,11 +10,15 @@ fn main() {
     let text = " Hello World ";
     println!("normalize: {}", normalize(text));
 
-    let fib = algo::slow_fib(20);
-    println!("fib(20): {}", fib);
+    for _ in 0..1000 {
+        let fib = algo::slow_fib(30);
+        std::hint::black_box(fib);
 
-    let uniq = algo::slow_dedup(&[1, 2, 2, 3, 1, 4, 4]);
-    println!("dedup: {:?}", uniq);
+        let uniq = algo::slow_dedup(std::hint::black_box(&[
+            1, 2, 2, 3, 1, 4, 4, 5, 6, 6, 7, 8, 1, 2, 3,
+        ]));
+        std::hint::black_box(uniq);
+    }
 
     unsafe {
         use_after_free();
