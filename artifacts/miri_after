@@ -1,0 +1,6 @@
+cargo +nightly miri run
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running `/Users/kgalkin/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo-miri runner target/miri/aarch64-apple-darwin/debug/demo`
+sum_even: 6
+non-zero bytes: 3
+normalize: helloworld
