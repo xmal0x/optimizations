@@ -1,5 +1,7 @@
 # optimizations
 
+В корне проекта есть ./reference_app
+
 ## Изменения 
 
 ### lib.rs
