@@ -1,0 +1,27 @@
+sum_even not checked before optimisation, becouse it get stuck while:
+Benchmarking sum_even_broken: Warming up for 3.0000 s
+
+After sum_even optimisation:
+
+     Running benches/criterion.rs (target/release/deps/criterion-9c6bd407cb04f79d)
+Gnuplot not found, using plotters backend
+sum_even_broken         time:   [7.7703 µs 7.8599 µs 8.0427 µs]
+                        change: [-0.3149% +0.2987% +1.2743%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Found 17 outliers among 100 measurements (17.00%)
+  1 (1.00%) high mild
+  16 (16.00%) high severe
+
+slow_fib_broken         time:   [6.5093 ms 6.5192 ms 6.5331 ms]
+                        change: [-0.3003% -0.0624% +0.1687%] (p = 0.64 > 0.05)
+                        No change in performance detected.
+Found 20 outliers among 100 measurements (20.00%)
+  8 (8.00%) high mild
+  12 (12.00%) high severe
+
+slow_dedup_broken       time:   [8.9293 ms 8.9437 ms 8.9611 ms]
+                        change: [-0.3366% -0.0791% +0.1641%] (p = 0.54 > 0.05)
+                        No change in performance detected.
+Found 19 outliers among 100 measurements (19.00%)
+  2 (2.00%) high mild
+  17 (17.00%) high severe

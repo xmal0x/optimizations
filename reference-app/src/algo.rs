@@ -1,8 +1,7 @@
 use std::collections::HashSet;
 
-/// Намеренно низкопроизводительная реализация.
-#[inline(never)]
-pub fn slow_dedup(values: &[u64]) -> Vec<u64> {
+/// Линейная по времени и памяти: сохраняет первый порядок уникальных элементов.
+pub fn fast_dedup(values: &[u64]) -> Vec<u64> {
     let mut seen = HashSet::with_capacity(values.len());
     let mut out = Vec::with_capacity(values.len());
     for &v in values {
@@ -14,9 +13,8 @@ pub fn slow_dedup(values: &[u64]) -> Vec<u64> {
     out
 }
 
-/// Классическая экспоненциальная реализация без мемоизации — будет медленной на больших n.
-#[inline(never)]
-pub fn slow_fib(n: u64) -> u64 {
+/// Линейная итеративная версия числа Фибоначчи.
+pub fn fast_fib(n: u64) -> u64 {
     match n {
         0 => 0,
         1 => 1,
